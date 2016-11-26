@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lunch Checker</title>
+  </head>
+  <body ng-app="LunchCheck">
+    <h1>Lunch Checker</hi>
+    <div ng-controller="LunchCheckController">
+      <div>
+        <input type="text" ng-style="customStyle.style" ng-model="lunch">
+        Empty item, i.e., , , are NOT considered as an item towards to the count!
+      </div>
+      <div>{{message}}</div>
+      <div>
+        <button ng-click="checkLunch();">Check If Too Much</button>
+      </div>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
