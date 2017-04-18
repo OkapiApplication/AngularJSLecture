@@ -5,10 +5,10 @@
   .controller('CategoriesListController', CategoriesListController);
 
 
-  CategoriesListController.$inject = ['items'];
-  function CategoriesListController(items) {
-    var categories = this;
-    categories.items = items;
+  CategoriesListController.$inject = ['categories'];
+  function CategoriesListController(categories) {
+    var categorieList = this;
+    categorieList.items = categories;
   }
 
 })();

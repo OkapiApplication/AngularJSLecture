@@ -6,12 +6,6 @@
   <title>Restaurant Menu</title>
 </head>
 <body>
-  <div class="tabs">
-    <a ui-sref="home">HOME</a>
-    <a ui-sref="categories">CATEGORIES</a>
-    <a ui-sref="items">ITEMS</a>
-  </div>
-
   <ui-view></ui-view>
 
   <!-- Libraries -->
@@ -19,16 +13,19 @@
   <script src="lib/angular-ui-router.min.js"></script>
 
   <!-- Modules -->
-  <script src="src/menulist/menuapp.module.js"></script>
   <script src="src/data/data.module.js"></script>
+  <script src="src/menulist/menuapp.module.js"></script>
 
   <!-- Routes -->
   <script src="src/routes.js"></script>
 
   <!-- 'Data' module artifacts -->
   <script src="src/data/menudata.service.js"></script>
+
   <!-- 'MenuApp' module artifacts -->
   <script src="src/menulist/categories.component.js"></script>
   <script src="src/menulist/categories.controller.js"></script>
+  <script src="src/menulist/items.component.js"></script>
+  <script src="src/menulist/items.controller.js"></script>
 </body>
 </html>

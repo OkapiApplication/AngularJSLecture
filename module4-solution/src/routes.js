@@ -18,14 +18,20 @@
       templateUrl: 'src/menulist/templates/categories.template.html',
       controller: 'CategoriesListController as categories',
       resolve: {
-        items: ['MenuDataService', function (MenuDataService) {
-          return MenuAppService.getAllCategories();
+        categories: ['MenuDataService', function (MenuDataService) {
+          return MenuDataService.getAllCategories();
         }]
       }
     })
-    .state('items', {
-      url: '/items',
-      templateUrl: 'src/menulist/templates/items.template.html'
+    .state('categories.items', {
+      url: '/items/{{categoryShortName}}',
+      templateUrl: 'src/menulist/templates/items.template.html',
+      controller: 'ItemCategoryController as itemOfCategory',
+      resolve: {
+        items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
+          return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+        }]
+      }
     });
   }
 })();
