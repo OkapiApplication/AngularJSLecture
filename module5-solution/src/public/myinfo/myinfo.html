@@ -1,0 +1,13 @@
+<div id="main-content" class="container">
+  <h2 ng-show="myInfo.isSignup()" id="menu-categories-title" class="text-center">
+    {{myInfo.firstname}} {{myInfo.lastname}}
+  </h2>
+  <div ng-show="myInfo.isSignup()" class="text-center">
+    Email: {{myInfo.email}} <br>
+    Phone: {{myInfo.phone}}
+  </div>
+  <menu-item ng-show="myInfo.isSignup()" menu-item="myInfo.favoritedish"></menu-item>
+  <div id="info" ng-hide="myInfo.isSignup()">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+</div>
